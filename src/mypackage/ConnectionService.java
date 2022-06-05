@@ -19,7 +19,7 @@ public class ConnectionService {
             String driver = "com.mysql.cj.jdbc.Driver";
             Class.forName(driver);
 
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/laralib", "root", "");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/lms", "root", "");
 
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Exception during MySQL COnnection: " + e);

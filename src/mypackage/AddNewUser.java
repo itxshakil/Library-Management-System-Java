@@ -169,7 +169,7 @@ public class AddNewUser extends javax.swing.JFrame {
 
                     ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE email = '" + email + "' LIMIT 1");
                     if (rs.next() == false) {
-                        String insertionQuery = "INSERT INTO users (course_id, rollno, name, email, address) VALUES(1, 0, ?, ?, ?)";
+                        String insertionQuery = "INSERT INTO users (name, email, address) VALUES(?, ?, ?)";
                         PreparedStatement pstmt = con.prepareStatement(insertionQuery);
                         pstmt.setString(1, name);
                         pstmt.setString(2, email);

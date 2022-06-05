@@ -4,9 +4,9 @@
  */
 package mypackage;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
@@ -168,20 +168,39 @@ public class IssueBook extends javax.swing.JFrame {
                 if (con == null) {
                     JOptionPane.showMessageDialog(this, "Error while connecting database.");
                 } else {
+                    // TODO Check if book exists
                     Statement stmt = con.createStatement();
 
-                    String insertionQuery = "INSERT INTO issue_logs (admin_id, book_id, user_id) VALUES(1, ?, ?)";
-                    PreparedStatement pstmt = con.prepareStatement(insertionQuery);
-                    pstmt.setString(1, bookId);
-                    pstmt.setString(2, userId);
-                    pstmt.execute();
-                    pstmt.close();
+                    ResultSet rs = stmt.executeQuery("SELECT count FROM books WHERE id = '" + bookId + "' LIMIT 1");
+                    if (rs.next() == false) {
+                        JOptionPane.showMessageDialog(this, "Book not found with the email.");
+                    } else {
+                        int count = rs.getInt("count");
+                        if (count == 0) {
+                            JOptionPane.showMessageDialog(this, "Book is out of stock.");
+                        } else {
+                            stmt = con.createStatement();
 
-                    con.close();
-                    JOptionPane.showMessageDialog(this, "Book issued successfully.");
+                            String insertionQuery = "INSERT INTO issue_logs (book_id, user_id) VALUES(?, ?)";
+                            PreparedStatement pstmt = con.prepareStatement(insertionQuery);
+                            pstmt.setString(1, bookId);
+                            pstmt.setString(2, userId);
+                            pstmt.execute();
+                            pstmt.close();
+                            
+                            String updateQuery = "UPDATE books SET count ='"+ --count +"' WHERE id = ?";
+                            pstmt = con.prepareStatement(updateQuery);
+                            pstmt.setString(1, bookId);
+                            pstmt.execute();
+                            pstmt.close();
 
-                    this.setVisible(false);
-                    new Issues().setVisible(true);
+                            con.close();
+                            JOptionPane.showMessageDialog(this, "Book issued successfully.");
+
+                            this.setVisible(false);
+                            new Issues().setVisible(true);
+                        }
+                    }
                 }
             } catch (Exception e) {
                 System.out.println("fException during MySQL COnnection: " + e);

@@ -42,15 +42,15 @@ public class Users extends javax.swing.JFrame {
                     while (rs.next()) {
                         String id = rs.getString("id");
                         String name  =  rs.getString("name");
-                        String course = rs.getString("course_id");
-                        String rollno = rs.getString("rollno");
+                        String email = rs.getString("email");
+                        String address = rs.getString("address");
                         DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
-                        model.addRow(new Object[]{id, name, course, rollno});
+                        model.addRow(new Object[]{id, name, email, address});
                     }
                 }
                 con.close();
             } catch (HeadlessException | SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Database Error occurred.");
+                JOptionPane.showMessageDialog(null, "Database Error occurred."+ex.getMessage());
             }
         }
     }
@@ -88,7 +88,7 @@ public class Users extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Name", "Class", "Roll no", "Actions"
+                "Id", "Name", "Email", "Address", "Actions"
             }
         ) {
             boolean[] canEdit = new boolean [] {
