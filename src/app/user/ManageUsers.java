@@ -6,7 +6,6 @@ package app.user;
 
 import app.AdminHome;
 import app.ConnectionService;
-import app.user.Users;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -172,13 +172,7 @@ public class AddNewUser extends javax.swing.JFrame {
 
                     ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE email = '" + email + "' LIMIT 1");
                     if (rs.next() == false) {
-                        String insertionQuery = "INSERT INTO users (name, email, address) VALUES(?, ?, ?)";
-                        PreparedStatement pstmt = con.prepareStatement(insertionQuery);
-                        pstmt.setString(1, name);
-                        pstmt.setString(2, email);
-                        pstmt.setString(3, address);
-                        pstmt.execute();
-                        pstmt.close();
+                        addUser(con, name, email, address);
                         
                         con.close();
                         JOptionPane.showMessageDialog(this, "User added successfully.");
@@ -194,6 +188,16 @@ public class AddNewUser extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void addUser(Connection con, String name, String email, String address) throws SQLException {
+        String insertionQuery = "INSERT INTO users (name, email, address) VALUES(?, ?, ?)";
+        PreparedStatement pstmt = con.prepareStatement(insertionQuery);
+        pstmt.setString(1, name);
+        pstmt.setString(2, email);
+        pstmt.setString(3, address);
+        pstmt.execute();
+        pstmt.close();
+    }
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
