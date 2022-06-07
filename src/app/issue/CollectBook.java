@@ -4,6 +4,23 @@
  */
 package app.issue;
 
+import app.AdminHome;
+import app.ConnectionService;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Shakil
@@ -37,59 +54,82 @@ public class CollectBook extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Collect Book");
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Collect Book");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(125, 20, 250));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back to list");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 140, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(125, 20, 250));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back to Dashboard");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Book Id");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 92, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 340, 40));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("User Id");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 340, 40));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(125, 20, 250));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("View Details");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 150, 32));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(100, 15, 225));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Mark as returned");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, -1, 32));
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,69 +154,22 @@ public class CollectBook extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(jTable5);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 420, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap())
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 980, 204));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/08 - fLVXu6r.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
         new Issues().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
         new AdminHome().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -191,8 +184,7 @@ public class CollectBook extends javax.swing.JFrame {
         String bookId = this.jTextField1.getText().trim();
         String userId = this.jTextField2.getText().trim();
 
-        // TODO check if email is formatted correct
-        if (bookId == null || userId == null) {
+        if (bookId.isEmpty() || userId.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill username and password.");
         } else {
             try {
@@ -206,36 +198,63 @@ public class CollectBook extends javax.swing.JFrame {
                     if (rs.next() == false) {
                         JOptionPane.showMessageDialog(this, "Book not found with the email.");
                     } else {
-                        int count = rs.getInt("count");
-                        if (count == 0) {
-                            JOptionPane.showMessageDialog(this, "Book is out of stock.");
-                        } else {
-                            String insertionQuery = "INSERT INTO issue_logs (book_id, user_id) VALUES(?, ?)";
-                            PreparedStatement pstmt = con.prepareStatement(insertionQuery);
-                            pstmt.setString(1, bookId);
-                            pstmt.setString(2, userId);
-                            pstmt.execute();
-                            pstmt.close();
-
-                            String updateQuery = "UPDATE books SET count ='" + --count + "' WHERE id = ?";
-                            pstmt = con.prepareStatement(updateQuery);
-                            pstmt.setString(1, bookId);
-                            pstmt.execute();
-                            pstmt.close();
-
-                            con.close();
-                            JOptionPane.showMessageDialog(this, "Book issued successfully.");
-
-                            this.setVisible(false);
-                            new Issues().setVisible(true);
-                        }
+                        getIssueLogForSearched(con, bookId, userId);
                     }
                 }
             } catch (HeadlessException | SQLException e) {
                 System.out.println("fException during MySQL COnnection: " + e);
+            } catch (ParseException ex) {
+                Logger.getLogger("ParseException: " +ex);
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void getIssueLogForSearched(Connection con, String bookId, String userId) throws SQLException, ParseException {
+        String query = "SELECT issue_logs.*, books.title, users.name FROM `issue_logs` INNER JOIN books ON issue_logs.book_id =  books.id INNER JOIN users ON issue_logs.user_id = users.id WHERE book_id = ? AND user_id = ? AND returned_at IS NULL";
+        PreparedStatement pstmt = con.prepareStatement(query);
+        pstmt.setString(1, bookId);
+        pstmt.setString(2, userId);
+        pstmt.execute();
+        ResultSet rs = pstmt.getResultSet();
+        if (rs.next() == false) {
+            javax.swing.JOptionPane.showMessageDialog(null, "No Book issued to the user.");
+        } else {
+            do {
+                String id = rs.getString("id");
+                String title = rs.getString("title");
+                String name = rs.getString("name");
+                String created_at = rs.getString("created_at");
+                String returned_at = rs.getString("returned_at");
+                long fine = calculateFine(returned_at, created_at);
+
+                DefaultTableModel model = (DefaultTableModel) this.jTable5.getModel();
+                model.addRow(new Object[]{id, title, name, created_at, fine});
+            } while (rs.next());
+        }
+    }
+
+    private long calculateFine(String returned_at, String created_at) throws ParseException {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String date = (returned_at == null) ? dtf.format(LocalDateTime.now()) : returned_at;
+
+        long difference_In_Days = getDifferenceInDays(created_at, date);
+
+        long fine = 0;
+        if (difference_In_Days > 15) {
+            int extra = (int) (difference_In_Days - 15);
+            fine = (long) (extra * 0.5);
+        }
+        return fine;
+    }
+
+    private long getDifferenceInDays(String created_at, String date) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Date d1 = sdf.parse(created_at);
+        Date d2 = sdf.parse(date);
+        long difference_In_Time = d2.getTime() - d1.getTime();
+        long difference_In_Days = (difference_In_Time / (1000 * 60 * 60 * 24)) % 365;
+        return difference_In_Days;
+    }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String bookId = this.jTextField1.getText().trim();
@@ -249,52 +268,20 @@ public class CollectBook extends javax.swing.JFrame {
                 if (con == null) {
                     JOptionPane.showMessageDialog(this, "Error while connecting database.");
                 } else {
-                    String insertionQuery = "SELECT * FROM issue_logs WHERE book_id = ? AND user_id = ?";
-                    PreparedStatement pstmt = con.prepareStatement(insertionQuery);
-                    pstmt.setString(1, bookId);
-                    pstmt.setString(2, userId);
-                    pstmt.execute();
-                    pstmt.close();
-
-                    ResultSet rs = pstmt.getResultSet();
+                    ResultSet rs = getIssueLog(con, bookId, userId);
                     if (rs.next() == false) {
                         JOptionPane.showMessageDialog(this, "Book is not issued to the user.");
                     } else {
                         rs.first();
-                        String updateQuery = "UPDATE issue_logs SET returned_at = NOW() WHERE book_id = ? AND user_is = ?";
-                        pstmt = con.prepareStatement(updateQuery);
-                        pstmt.setString(1, bookId);
-                        pstmt.setString(2, userId);
-                        pstmt.execute();
-                        pstmt.close();
 
-                        insertionQuery = "SELECT * FROM books WHERE id = ?";
-                        pstmt = con.prepareStatement(insertionQuery);
-                        pstmt.setString(1, bookId);
-                        pstmt.execute();
-                        pstmt.close();
-
-                        rs = pstmt.getResultSet();
-
-                        if (rs.next() == false) {
-                            JOptionPane.showMessageDialog(this, "Book is not issued to the user.");
-                        } else {
-                            rs.first();
-
-                            int count = rs.getInt("count");
-
-                            updateQuery = "UPDATE books SET count ='" + count++ + "' WHERE id = ?";
-                            pstmt = con.prepareStatement(updateQuery);
-                            pstmt.setString(1, bookId);
-                            pstmt.execute();
-                            pstmt.close();
-                        }
+                        markAsReturned(con, bookId, userId);
+                        increaseCount(con, bookId);
 
                         con.close();
                         JOptionPane.showMessageDialog(this, "Book marked as returned successfully.");
 
-                        this.setVisible(false);
                         new Issues().setVisible(true);
+                        dispose();
                     }
                 }
             } catch (HeadlessException | SQLException e) {
@@ -302,6 +289,46 @@ public class CollectBook extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void markAsReturned(Connection con, String bookId, String userId) throws SQLException {
+        String updateQuery = "UPDATE issue_logs SET returned_at = NOW() WHERE book_id = ? AND user_id = ?";
+        PreparedStatement pstmt = con.prepareStatement(updateQuery);
+        pstmt.setString(1, bookId);
+        pstmt.setString(2, userId);
+        pstmt.execute();
+    }
+
+    private void increaseCount(Connection con, String bookId) throws SQLException, HeadlessException {
+        PreparedStatement pstmt;
+        ResultSet rs;
+        String updateQuery;
+        String insertionQuery = "SELECT * FROM books WHERE id = ?";
+        pstmt = con.prepareStatement(insertionQuery);
+        pstmt.setString(1, bookId);
+        pstmt.execute();
+        rs = pstmt.getResultSet();
+        if (rs.next() == false) {
+            JOptionPane.showMessageDialog(this, "Book not found.");
+        } else {
+            rs.first();
+            int count = rs.getInt("count");
+
+            updateQuery = "UPDATE books SET count ='" + count++ + "' WHERE id = ?";
+            pstmt = con.prepareStatement(updateQuery);
+            pstmt.setString(1, bookId);
+            pstmt.execute();
+        }
+    }
+
+    private ResultSet getIssueLog(Connection con, String bookId, String userId) throws SQLException {
+        String insertionQuery = "SELECT * FROM issue_logs WHERE book_id = ? AND user_id = ?";
+        PreparedStatement pstmt = con.prepareStatement(insertionQuery);
+        pstmt.setString(1, bookId);
+        pstmt.setString(2, userId);
+        pstmt.execute();
+        ResultSet rs = pstmt.getResultSet();
+        return rs;
+    }
 
     private void jTable5ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable5ComponentShown
         // TODO add your handling code here:
@@ -351,12 +378,7 @@ public class CollectBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

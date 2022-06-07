@@ -44,121 +44,98 @@ public class IssueBook extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Issue Book");
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Issue book");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(125, 20, 250));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back to list");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 130, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(125, 20, 250));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back to Dashboard");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 130, -1, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 312, 40));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Book Id");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 92, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("User Id");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, -1, -1));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 312, 40));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(125, 20, 250));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Issue Book");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 310, 40));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setText("Mark as returned");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setBackground(new java.awt.Color(125, 20, 250));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Collect book");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 130, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap())))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/08 - fLVXu6r.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
         new Issues().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
         new AdminHome().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -173,8 +150,7 @@ public class IssueBook extends javax.swing.JFrame {
         String bookId = this.jTextField1.getText().trim();
         String userId = this.jTextField2.getText().trim();
 
-        // TODO check if email is formatted correct
-        if (bookId == null || userId == null) {
+        if (bookId.isEmpty() || userId.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill username and password.");
         } else {
             try {
@@ -182,36 +158,25 @@ public class IssueBook extends javax.swing.JFrame {
                 if (con == null) {
                     JOptionPane.showMessageDialog(this, "Error while connecting database.");
                 } else {
-                    Statement stmt = con.createStatement();
-
-                    ResultSet rs = stmt.executeQuery("SELECT count FROM books WHERE id = '" + bookId + "' LIMIT 1");
+                    ResultSet rs = getIssueFor(con, bookId, userId);
                     if (rs.next() == false) {
-                        JOptionPane.showMessageDialog(this, "Book not found with the email.");
-                    } else {
-                        int count = rs.getInt("count");
-                        if (count == 0) {
-                            JOptionPane.showMessageDialog(this, "Book is out of stock.");
-                        } else {
-                            String insertionQuery = "INSERT INTO issue_logs (book_id, user_id) VALUES(?, ?)";
-                            PreparedStatement pstmt = con.prepareStatement(insertionQuery);
-                            pstmt.setString(1, bookId);
-                            pstmt.setString(2, userId);
-                            pstmt.execute();
-                            pstmt.close();
-
-                            String updateQuery = "UPDATE books SET count ='" + --count + "' WHERE id = ?";
-                            pstmt = con.prepareStatement(updateQuery);
-                            pstmt.setString(1, bookId);
-                            pstmt.execute();
-                            pstmt.close();
+                        int bookCount = isBookAvailable(con, bookId);
+                        if (bookCount > 0) {
+                            addIssueLog(con, bookId, userId);
+                            decreaseBookCount(bookCount, con, bookId);
 
                             con.close();
                             JOptionPane.showMessageDialog(this, "Book issued successfully.");
 
-                            this.setVisible(false);
                             new Issues().setVisible(true);
+                            dispose();
+                        }else{
+                            JOptionPane.showMessageDialog(this, "Book is out of stock.");
                         }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Book already issue to the user.");
                     }
+
                 }
             } catch (HeadlessException | SQLException e) {
                 System.out.println("fException during MySQL COnnection: " + e);
@@ -219,71 +184,51 @@ public class IssueBook extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        String bookId = this.jTextField1.getText().trim();
-        String userId = this.jTextField2.getText().trim();
+    private ResultSet getIssueFor(Connection con, String bookId, String userId) throws SQLException {
+        String query = "SELECT * FROM `issue_logs` WHERE book_id = ? AND user_id = ? AND returned_at IS NULL";
+        PreparedStatement pstmt = con.prepareStatement(query);
+        pstmt.setString(1, bookId);
+        pstmt.setString(2, userId);
+        pstmt.execute();
+        ResultSet rs = pstmt.getResultSet();
+        return rs;
+    }
 
-        if (bookId == null || userId == null) {
-            JOptionPane.showMessageDialog(this, "Please fill username and password.");
+    private void addIssueLog(Connection con, String bookId, String userId) throws SQLException {
+        PreparedStatement pstmt;
+        String insertionQuery = "INSERT INTO issue_logs (book_id, user_id) VALUES(?, ?)";
+        pstmt = con.prepareStatement(insertionQuery);
+        pstmt.setString(1, bookId);
+        pstmt.setString(2, userId);
+        pstmt.execute();
+        pstmt.close();
+    }
+
+    private void decreaseBookCount(int count, Connection con, String bookId) throws SQLException {
+        PreparedStatement pstmt;
+        String updateQuery = "UPDATE books SET count ='" + --count + "' WHERE id = ?";
+        pstmt = con.prepareStatement(updateQuery);
+        pstmt.setString(1, bookId);
+        pstmt.execute();
+        pstmt.close();
+    }
+
+    int isBookAvailable(Connection con, String bookId) throws SQLException {
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT count FROM books WHERE id = '" + bookId + "' LIMIT 1");
+        if (rs.next() == false) {
+            JOptionPane.showMessageDialog(this, "Book not found with the id.");
+            return 0;
         } else {
-            try {
-                Connection con = new ConnectionService().getConnection();
-                if (con == null) {
-                    JOptionPane.showMessageDialog(this, "Error while connecting database.");
-                } else {
-                    String insertionQuery = "SELECT * FROM issue_logs WHERE book_id = ? AND user_id = ?";
-                    PreparedStatement pstmt = con.prepareStatement(insertionQuery);
-                    pstmt.setString(1, bookId);
-                    pstmt.setString(2, userId);
-                    pstmt.execute();
-                    pstmt.close();
-
-                    ResultSet rs = pstmt.getResultSet();
-                    if (rs.next() == false) {
-                        JOptionPane.showMessageDialog(this, "Book is not issued to the user.");
-                    } else {
-                        rs.first();
-                        String updateQuery = "UPDATE issue_logs SET returned_at = NOW() WHERE book_id = ? AND user_is = ?";
-                        pstmt = con.prepareStatement(updateQuery);
-                        pstmt.setString(1, bookId);
-                        pstmt.setString(2, userId);
-                        pstmt.execute();
-                        pstmt.close();
-
-                        insertionQuery = "SELECT * FROM books WHERE id = ?";
-                        pstmt = con.prepareStatement(insertionQuery);
-                        pstmt.setString(1, bookId);
-                        pstmt.execute();
-                        pstmt.close();
-
-                        rs = pstmt.getResultSet();
-
-                        if (rs.next() == false) {
-                            JOptionPane.showMessageDialog(this, "Book is not issued to the user.");
-                        } else {
-                            rs.first();
-
-                            int count = rs.getInt("count");
-
-                            updateQuery = "UPDATE books SET count ='" + count++ + "' WHERE id = ?";
-                            pstmt = con.prepareStatement(updateQuery);
-                            pstmt.setString(1, bookId);
-                            pstmt.execute();
-                            pstmt.close();
-                        }
-
-                        con.close();
-                        JOptionPane.showMessageDialog(this, "Book marked as returned successfully.");
-
-                        this.setVisible(false);
-                        new Issues().setVisible(true);
-                    }
-                }
-            } catch (HeadlessException | SQLException e) {
-                System.out.println("fException during MySQL COnnection: " + e);
-            }
+            int count = rs.getInt("count");
+            return count;
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new CollectBook().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,10 +269,11 @@ public class IssueBook extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables

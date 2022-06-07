@@ -30,7 +30,7 @@ public class ManageBooks extends javax.swing.JFrame {
      */
     public ManageBooks() {
         initComponents();
-        
+
         this.jPanel1.setVisible(false);
     }
 
@@ -55,47 +55,66 @@ public class ManageBooks extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Manage Books");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(125, 20, 250));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back to list");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 130, -1, 40));
 
+        jButton1.setBackground(new java.awt.Color(125, 20, 250));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back to Dashboard");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 130, -1, 40));
 
         jTextField1.setToolTipText("Search By Id or email");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 180, 220, 40));
 
+        jButton3.setBackground(new java.awt.Color(125, 20, 250));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Search");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 180, 110, 40));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Search by Id or ISBN");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 170, 30));
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Book", "User", "Issued at", "Fine"
+                "Id", "Book", "User", "Issued at", "Returned at", "Fine"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -109,7 +128,7 @@ public class ManageBooks extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jTable4);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Issues");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -117,11 +136,11 @@ public class ManageBooks extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Title", "ISBN", "Count", "Actions"
+                "Id", "Title", "ISBN", "Author", "Year", "Count"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, true, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -140,13 +159,9 @@ public class ManageBooks extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
-                    .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,77 +170,33 @@ public class ManageBooks extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(jLabel3)
-                .addContainerGap(351, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(86, 86, 86)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)))))
-                .addGap(26, 26, 26))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 1030, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/08 - fLVXu6r.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
         new Books().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
         new AdminHome().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String search = this.jTextField1.getText().trim();
 
-        if (search == null) {
+        if (search.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill id or email.");
         } else {
             try {
@@ -233,13 +204,7 @@ public class ManageBooks extends javax.swing.JFrame {
                 if (con == null) {
                     JOptionPane.showMessageDialog(this, "Error while connecting database.");
                 } else {
-                    String query = "SELECT * FROM books WHERE id= ? OR isbn = ? LIMIT 1";
-                    PreparedStatement pstmt = con.prepareStatement(query);
-                    pstmt.setString(1, search);
-                    pstmt.setString(2, search);
-                    pstmt.execute();
-
-                    ResultSet rs = pstmt.getResultSet();
+                    ResultSet rs = getBook(con, search);
                     DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
                     model.setRowCount(0);
                     if (rs.next() == false) {
@@ -247,20 +212,10 @@ public class ManageBooks extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Book not found with the isbn or Id.");
                     } else {
                         rs.first();
-                        
-                        String id = rs.getString("id");
-                        String title  =  rs.getString("title");
-                        String isbn = rs.getString("isbn");
-                        String count = rs.getString("count");
-                        // DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
-                        model.addRow(new Object[]{id, title, isbn, count});
 
-                        query = "SELECT issue_logs.*, books.title, users.name FROM `issue_logs` INNER JOIN books ON issue_logs.book_id =  books.id INNER JOIN users ON issue_logs.user_id = users.id WHERE book_id = ?";
-                        pstmt = con.prepareStatement(query);
-                        pstmt.setString(1, id);
-                        pstmt.execute();
+                        String id = showBookDetail(rs, model);
 
-                        rs = pstmt.getResultSet();
+                        rs = getBookIssues(con, id);
                         if (rs.next() == false) {
                             DefaultTableModel model2 = (DefaultTableModel) this.jTable4.getModel();
                             model2.setRowCount(0);
@@ -268,32 +223,9 @@ public class ManageBooks extends javax.swing.JFrame {
                         } else {
                             DefaultTableModel model2 = (DefaultTableModel) this.jTable4.getModel();
                             model2.setRowCount(0);
-                            while (rs.next()) {
-                                id = rs.getString("id");
-                                title = rs.getString("title");
-                                String name = rs.getString("name");
-                                String created_at = rs.getString("created_at");
-                                String returned_at = rs.getString("returned_at");
-
-                                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                                String date = (returned_at == null) ? dtf.format(LocalDateTime.now()) : returned_at;
-                                System.out.println(date);
-
-                                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-                                Date d1 = sdf.parse(created_at);
-                                Date d2 = sdf.parse(date);
-
-                                long difference_In_Time = d2.getTime() - d1.getTime();
-                                long difference_In_Days = (difference_In_Time / (1000 * 60 * 60 * 24)) % 365;
-
-                                long fine = 0;
-                                if(difference_In_Days > 15){
-                                    int extra =  (int) (difference_In_Days - 15);
-                                    fine = (long) (extra * 0.5);
-                                }
-
-                                model2.addRow(new Object[]{id, title, name, created_at, fine});
-                            }
+                            do{
+                                addIssueToTable(rs, model2);
+                            }while (rs.next());
                         }
                         this.jPanel1.setVisible(true);
                     }
@@ -305,6 +237,71 @@ public class ManageBooks extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void addIssueToTable(ResultSet rs, DefaultTableModel model2) throws ParseException, SQLException {
+        String id = rs.getString("id");
+        String title = rs.getString("title");
+        String name = rs.getString("name");
+        String created_at = rs.getString("created_at");
+        String returned_at = rs.getString("returned_at");
+
+        long fine = calculateFine(returned_at, created_at);
+        model2.addRow(new Object[]{id, title, name, created_at, (returned_at == null ? "Not Returned" : returned_at), fine});
+    }
+
+    private long calculateFine(String returned_at, String created_at) throws ParseException {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String date = (returned_at == null) ? dtf.format(LocalDateTime.now()) : returned_at;
+
+        long difference_In_Days = getDifferenceInDays(created_at, date);
+
+        long fine = 0;
+        if (difference_In_Days > 15) {
+            int extra = (int) (difference_In_Days - 15);
+            fine = (long) (extra * 0.5);
+        }
+        return fine;
+    }
+
+    private long getDifferenceInDays(String created_at, String date) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Date d1 = sdf.parse(created_at);
+        Date d2 = sdf.parse(date);
+        long difference_In_Time = d2.getTime() - d1.getTime();
+        long difference_In_Days = (difference_In_Time / (1000 * 60 * 60 * 24)) % 365;
+        return difference_In_Days;
+    }
+
+    private ResultSet getBookIssues(Connection con, String id) throws SQLException {
+        ResultSet rs;
+        String query = "SELECT issue_logs.*, books.title, users.name FROM `issue_logs` INNER JOIN books ON issue_logs.book_id =  books.id INNER JOIN users ON issue_logs.user_id = users.id WHERE book_id = ?";
+        PreparedStatement pstmt = con.prepareStatement(query);
+        pstmt.setString(1, id);
+        pstmt.execute();
+        rs = pstmt.getResultSet();
+        return rs;
+    }
+
+    private String showBookDetail(ResultSet rs, DefaultTableModel model) throws SQLException {
+        String id = rs.getString("id");
+        String title = rs.getString("title");
+        String isbn = rs.getString("isbn");
+        String count = rs.getString("count");
+        String author = rs.getString("author");
+        String year = rs.getString("year");
+        model.addRow(new Object[]{id, title, isbn, author, year, count});
+        return id;
+    }
+
+    private ResultSet getBook(Connection con, String search) throws SQLException {
+        String query = "SELECT * FROM books WHERE id= ? OR isbn = ? LIMIT 1";
+        PreparedStatement pstmt = con.prepareStatement(query);
+        pstmt.setString(1, search);
+        pstmt.setString(2, search);
+        pstmt.execute();
+        ResultSet rs = pstmt.getResultSet();
+        return rs;
+    }
 
     private void jTable4ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable4ComponentShown
         // TODO add your handling code here:
@@ -352,6 +349,7 @@ public class ManageBooks extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
