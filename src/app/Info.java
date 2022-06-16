@@ -165,7 +165,7 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("0");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -173,7 +173,7 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("jLabel2");
+        jLabel4.setText("0");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -181,7 +181,7 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("jLabel2");
+        jLabel6.setText("0");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -189,7 +189,7 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("jLabel2");
+        jLabel8.setText("0");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -197,7 +197,7 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("jLabel2");
+        jLabel10.setText("0");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -205,7 +205,7 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel12.setText("jLabel2");
+        jLabel12.setText("0");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(0, 0, 255));

@@ -167,7 +167,7 @@ public class AddNewBooks extends javax.swing.JFrame {
         String author = this.jTextField4.getText().trim();
         String year = this.jTextField5.getText().trim();
 
-        if (title.isEmpty() || isbn.isEmpty() || count.isEmpty() || author.isEMpty() || year.isEmpty()) {
+        if (title.isEmpty() || isbn.isEmpty() || count.isEmpty() || author.isEmpty() || year.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill all input field.");
         } else {
             try {
