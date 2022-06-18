@@ -3,11 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/book/ManageBooks.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/issue/CollectBook.java</file>
             <file>file:/C:/Projects/Java/JavaApplication4/src/app/Info.java</file>
             <file>file:/C:/Projects/Java/JavaApplication4/src/app/Start.java</file>
-            <file>file:/C:/Projects/Java/JavaApplication4/src/app/AdminHome.java</file>
             <file>file:/C:/Projects/Java/JavaApplication4/src/app/ConnectionService.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/user/ManageUsers.java</file>
             <file>file:/C:/Projects/Java/JavaApplication4/src/app/LoginForm.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/book/Books.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/user/Users.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/issue/Issues.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/AdminHome.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/issue/IssueBook.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/user/AddNewUser.java</file>
+            <file>file:/C:/Projects/Java/JavaApplication4/src/app/book/AddNewBooks.java</file>
         </group>
     </open-files>
 </project-private>

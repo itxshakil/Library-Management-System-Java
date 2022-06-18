@@ -159,8 +159,10 @@ public class AdminHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        int confirmed =  JOptionPane.showConfirmDialog(null, "Are you sure, you want to exit the program?",  "Exit Program Message Box", JOptionPane.YES_NO_OPTION);
+        int confirmed =  JOptionPane.showConfirmDialog(null, "Are you sure, you want to exit the program?",  "Library Management System - Exit", JOptionPane.YES_NO_OPTION);
         if(confirmed ==  JOptionPane.YES_OPTION){
+            System.out.println("Thanks for using Library Management System.");
+            System.out.println("Author -  Shakil Alam");
             dispose();
             System.exit(0);
         }
